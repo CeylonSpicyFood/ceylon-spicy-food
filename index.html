@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>CEYLON SPICY FOOD｜美浦村のスリランカ料理・ロティ・ビリヤニ</title>
+                <meta name="description" content="Ceylon spicy food（セイロン スパイシー フード）は茨城県美浦村のスリランカ料理店。ロティ職人が焼く本場のロティ、ライス＆カレー、ビリヤニ、コットゥ。スリランカ食材ショップ併設。テイクアウト歓迎。">
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+                                <style>
+                                    :root{
+                                        --bg:#120e0b;          /* 焙煎スパイスの黒 */
+                                        --bg2:#1c1510;
+                                        --panel:#241a12;
+                                        --line:rgba(245,184,46,.28);
+                                        --maroon:#8d153a;      /* スリランカ国旗のマルーン */
+                                        --orange:#eb7400;      /* 同・オレンジ */
+                                        --gold:#f5b82e;        /* 同・ゴールド */
+                                        --sand:#efe3d0;        /* 砂色の文字 */
+                                        --dim:#a4937c;
+                                    }
+                                    *{margin:0;padding:0;box-sizing:border-box}
+                                    html{scroll-behavior:smooth}
+                                    body{
+                                        font-family:'Zen Kaku Gothic New',sans-serif;
+                                        background:var(--bg);color:var(--sand);
+                                        line-height:1.9;letter-spacing:.02em;
+                                    }
+                                    img{max-width:100%;display:block}
+                                    a{color:inherit;text-decoration:none}
+                                    .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.14em}
+                                    .disp{font-family:'Oswald',sans-serif;letter-spacing:.06em;text-transform:uppercase}
+                                    .container{max-width:1100px;margin:0 auto;padding:0 22px}
+                                    
+                                    /* ===== 告知バー ===== */
+                                    .ticker{
+                                        background:var(--maroon);color:#ffd9a8;
+                                        font-size:.75rem;padding:7px 0;overflow:hidden;white-space:nowrap;
+                                    }
+                                    .ticker span{display:inline-block;padding-left:100%;animation:tick 22s linear infinite}
+                                    @keyframes tick{to{transform:translateX(-100%)}}
+                                    
+                                    /* ===== ヘッダー ===== */
+                                    header{
+                                        position:sticky;top:0;z-index:50;
+                                        background:rgba(18,14,11,.92);backdrop-filter:blur(6px);
+                                        border-bottom:1px solid var(--line);
+                                    }
+                                    .head-in{
+                                        max-width:1240px;margin:0 auto;padding:14px 22px;
+                                        display:flex;align-items:center;justify-content:space-between;gap:14px;
+                                    }
+                                    .brand{display:flex;align-items:center;gap:12px}
+                                    .brand-mark{
+                                        width:38px;height:38px;flex:none;
+                                        background:linear-gradient(135deg,var(--orange),var(--maroon));
+                                        display:grid;place-items:center;color:#fff;
+                                        font-family:'Oswald',sans-serif;font-weight:700;font-size:1.05rem;
+                                    }
+                                    .brand-name{line-height:1.15}
+                                    .brand-name .disp{font-size:1.05rem;color:var(--gold);font-weight:600}
+                                    .brand-name small{display:block;font-size:.6rem;color:var(--dim);letter-spacing:.3em}
+                                    nav{display:flex;gap:26px;font-size:.8rem}
+                                    nav a{color:var(--dim);padding:4px 0;border-bottom:1px solid transparent;transition:.2s}
+                                    nav a:hover{color:var(--gold);border-color:var(--gold)}
+                                    .tel-btn{
+                                        border:1px solid var(--gold);color:var(--gold);
+                                        padding:9px 18px;font-size:.8rem;font-weight:700;transition:.2s;white-space:nowrap;
+                                    }
+                                    .tel-btn:hover{background:var(--gold);color:var(--bg)}
+                                    @media(max-width:820px){nav{display:none}}
+                                    
+                                    /* ===== ヒーロー ===== */
+                                    .hero{
+                                        position:relative;overflow:hidden;
+                                        border-bottom:1px solid var(--line);
+                                        background:
+                                        radial-gradient(700px 420px at 90% 15%, rgba(235,116,0,.22), transparent 65%),
+                                        radial-gradient(600px 400px at 5% 90%, rgba(141,21,58,.35), transparent 60%),
+                                        var(--bg);
+                                    }
+                                    .hero-grid{
+                                        max-width:1240px;margin:0 auto;padding:90px 22px 80px;
+                                        display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;
+                                    }
+                                    .hero .kicker{color:var(--orange);font-size:.75rem;margin-bottom:20px}
+                                    .hero h1{
+                                        font-family:'Oswald',sans-serif;text-transform:uppercase;
+                                        font-size:clamp(3rem,9vw,6.4rem);font-weight:700;line-height:.98;
+                                        color:var(--sand);letter-spacing:.02em;
+                                    }
+                                    .hero h1 em{font-style:normal;color:var(--gold)}
+                                    .hero .lede{margin-top:26px;color:var(--dim);font-size:.95rem;max-width:34em}
+                                    .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+                                    .cta{
+                                        padding:14px 30px;font-weight:700;font-size:.88rem;transition:.2s;
+                                    }
+                                    .cta-fill{background:var(--orange);color:#180d02}
+                                    .cta-fill:hover{background:var(--gold)}
+                                    .cta-ghost{border:1px solid var(--line);color:var(--sand)}
+                                    .cta-ghost:hover{border-color:var(--gold);color:var(--gold)}
+                                    .hero-side{border-left:1px solid var(--line);padding-left:26px;font-size:.8rem}
+                                    .hero-side dt{color:var(--orange);font-size:.65rem;margin-top:16px}
+                                    .hero-side dd{color:var(--sand)}
+                                    @media(max-width:820px){
+                                        .hero-grid{grid-template-columns:1fr;padding:64px 22px 56px}
+                                        .hero-side{border-left:none;border-top:1px solid var(--line);padding:20px 0 0}
+                                    }
+                                    
+                                    /* ===== セクション共通 ===== */
+                                    section{padding:88px 0;border-bottom:1px solid rgba(245,184,46,.12)}
+                                    .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:44px}
+                                    .sec-num{color:var(--maroon);font-size:.8rem;-webkit-text-stroke:0;color:var(--orange)}
+                                    .sec-head h2{
+                                        font-family:'Oswald',sans-serif;text-transform:uppercase;
+                                        font-size:clamp(1.7rem,4vw,2.6rem);font-weight:600;color:var(--sand);
+                                    }
+                                    .sec-head .jp{font-size:.8rem;color:var(--dim);margin-left:auto}
+                                    
+                                    /* ABOUT */
+                                    .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+                                    .about-cell{background:var(--bg2);padding:30px 26px}
+                                    .about-cell .mono{color:var(--orange);font-size:.65rem}
+                                    .about-cell h3{font-size:1.05rem;font-weight:700;margin:10px 0 8px;color:var(--gold)}
+                                    .about-cell p{font-size:.85rem;color:var(--dim)}
+                                    @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+                                    .about-note{margin-top:30px;font-size:.9rem;color:var(--sand);max-width:44em}
+                                    
+                                    /* MENU */
+                                    .menu-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:34px 46px;align-items:start}
+                                    .menu-group h3{
+                                        font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
+                                        color:var(--orange);font-size:1rem;letter-spacing:.12em;
+                                        border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:6px;
+                                    }
+                                    .menu-group h3 span{color:var(--dim);font-family:'Zen Kaku Gothic New',sans-serif;font-size:.7rem;letter-spacing:.05em;margin-left:10px}
+                                    .m-item{display:flex;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px dashed rgba(164,147,124,.25)}
+                                    .m-item .name{font-weight:700;font-size:.95rem}
+                                    .m-item .desc{font-size:.72rem;color:var(--dim)}
+                                    .m-item .dots{flex:1;border-bottom:1px dotted rgba(164,147,124,.4);transform:translateY(-4px)}
+                                    .m-item .price{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:.85rem;white-space:nowrap}
+                                    .menu-foot{margin-top:40px;padding:18px 22px;border:1px solid var(--line);font-size:.78rem;color:var(--dim)}
+                                    .menu-foot b{color:var(--gold)}
+                                    .menu-photo{margin-top:46px;border:1px solid var(--line);padding:14px}
+                                    .menu-photo img{width:100%}
+                                    .menu-photo p{font-size:.7rem;color:var(--dim);margin-top:10px;text-align:center}
+                                    
+                                    /* ===== メニュー画像ギャラリー ===== */
+                                    .menu-gallery {
+                                        display: grid;
+                                        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                                        gap: 24px;
+                                        margin-bottom: 56px;
+                                    }
+                                    .menu-gallery figure {
+                                        margin: 0;
+                                        border: 1px solid var(--line);
+                                        background: var(--bg2);
+                                        overflow: hidden;
+                                        border-radius: 4px;
+                                        box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+                                    }
+                                    .menu-gallery img {
+                                        width: 100%;
+                                        height: auto;
+                                        display: block;
+                                        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+                                    }
+                                    .menu-gallery figure:hover img {
+                                        transform: scale(1.04);
+                                        opacity: 0.9;
+                                    }
+                                    .menu-gallery figure::after {
+                                        content: '';
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                        position: absolute;
+                                        top: 0; left: 0;
+                                        box-shadow: inset 0 0 0 1px rgba(245,184,46,0);
+                                        transition: box-shadow 0.3s ease;
+                                        pointer-events: none;
+                                    }
+                                    .menu-gallery figure:hover::after {
+                                        box-shadow: inset 0 0 0 1px rgba(245,184,46,0.5);
+                                    }
+                                    
+                                    /* 看板メニュー帯 */
+                                    .feature{
+                                        margin-top:64px;display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;
+                                        background:linear-gradient(120deg,rgba(141,21,58,.5),rgba(235,116,0,.18));
+                                        border:1px solid var(--line);padding:36px;
+                                    }
+                                    .feature .big{
+                                        font-family:'Oswald',sans-serif;font-size:clamp(2rem,5vw,3.4rem);
+                                        font-weight:700;color:var(--gold);text-transform:uppercase;line-height:1.05;
+                                    }
+                                    .feature p{font-size:.88rem;color:var(--sand)}
+                                    .feature .price-tag{font-family:'IBM Plex Mono',monospace;color:var(--orange);margin-top:8px}
+                                    @media(max-width:820px){.feature{grid-template-columns:1fr;gap:16px}}
+                                    
+                                    /* SHOP */
+                                    .shop-flex{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+                                    .shop-cell{background:var(--panel);padding:38px 32px}
+                                    .shop-cell h3{color:var(--gold);font-size:1.1rem;font-weight:700;margin-bottom:12px}
+                                    .shop-cell p{font-size:.87rem;color:var(--dim)}
+                                    .shop-cell ul{list-style:none;margin-top:14px;font-size:.85rem}
+                                    .shop-cell li{padding:8px 0;border-bottom:1px dashed rgba(164,147,124,.25)}
+                                    .shop-cell li::before{content:"—";color:var(--orange);margin-right:10px}
+                                    @media(max-width:820px){.shop-flex{grid-template-columns:1fr}}
+                                    
+                                    /* INFO */
+                                    .info-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px}
+                                    @media(max-width:820px){.info-grid{grid-template-columns:1fr}}
+                                    table.info{width:100%;border-collapse:collapse;font-size:.85rem}
+                                    table.info th{
+                                        text-align:left;padding:14px 14px 14px 0;color:var(--orange);
+                                        font-weight:500;white-space:nowrap;vertical-align:top;
+                                        font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.14em;
+                                        border-bottom:1px solid rgba(245,184,46,.12);width:8.5em;
+                                    }
+                                    table.info td{padding:14px 0;border-bottom:1px solid rgba(245,184,46,.12)}
+                                    table.info td small{color:var(--dim)}
+                                    .map-box{border:1px solid var(--line);min-height:340px}
+                                    .map-box iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.2) contrast(1.05)}
+                                    
+                                    /* FOOTER */
+                                    footer{padding:56px 0 40px;text-align:center}
+                                    footer .disp{color:var(--gold);font-size:1.2rem}
+                                    footer p{font-size:.7rem;color:var(--dim);margin-top:14px}
+                                    .foot-tel{display:inline-block;margin-top:22px;font-family:'Oswald',sans-serif;font-size:1.6rem;color:var(--sand)}
+                                    .foot-tel:hover{color:var(--gold)}
+                                    
+                                    /* ===== NEWSスクロールバー ===== */
+                                      #news-list::-webkit-scrollbar { width: 6px; }
+                                      #news-list::-webkit-scrollbar-track { background: rgba(36,26,18,0.5); border-radius: 4px; }
+                                      #news-list::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 4px; }
+                                </style>
+    </head>
+    <body>
+        
+        <div class="ticker mono">
+            <span>2025.01 GRAND OPEN — 美浦村にスリランカ料理店が誕生 ／ ロティ職人在籍 ／ テイクアウト歓迎 ／ スリランカ食材 ／ TEL 070-3982-1085　　2025.01 GRAND OPEN — 美浦村にスリランカ料理店が誕生 ／ ロティ職人在籍 ／ テイクアウト歓迎 ／ スリランカ食材</span>
+        </div>
+        
+        <header>
+            <div class="head-in">
+                <a class="brand" href="#top">
+                    <span class="brand-mark">C</span>
+                    <span class="brand-name">
+                        <span class="disp">Ceylon Spicy Food</span>
+                        <small>HAIRA KITCHEN — MIHO, IBARAKI</small>
+                    </span>
+                </a>
+                <nav class="mono">
+                    <a href="#about">ABOUT</a>
+                    <a href="#news">NEWS</a>
+                    <a href="#menu">MENU</a>
+                    <a href="#shop">GROCERY</a>
+                    <a href="#info">ACCESS</a>
+                </nav>
+                <a class="tel-btn mono" href="tel:07039821085">070-3982-1085</a>
+            </div>
+        </header>
+        
+        <!-- ヒーロー -->
+        <div class="hero" id="top">
+            <div class="hero-grid">
+                <div>
+                    <p class="kicker mono">SRI LANKAN HOME COOKING ／ 茨城県美浦村</p>
+                    <h1>Real<br>Sri Lankan<br><em>Spice.</em></h1>
+                    <p class="lede">
+                    スリランカ人の店主が毎日焼くロティと、ココナッツとスパイスが幾重にも香る家庭の味。
+                    飾らないプレハブの小さな店で、本物のライス＆カレーをどうぞ。
+                    </p>
+                    <div class="cta-row">
+                        <a class="cta cta-fill" href="tel:07039821085">電話で注文・予約</a>
+                        <a class="cta cta-ghost" href="#menu">メニューを見る</a>
+                    </div>
+                </div>
+                <dl class="hero-side mono">
+                    <dt>OPEN</dt><dd>9:30 – 21:30</dd>
+                    <dt>CLOSED</dt><dd>月曜定休</dd>
+                    <dt>STYLE</dt><dd>イートイン 10席 ／ テイクアウト</dd>
+                    <dt>PARKING</dt><dd>5台</dd>
+                </dl>
+            </div>
+        </div>
+        
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-num mono">01</span>
+                    <h2>About</h2>
+                    <span class="jp">セイロン スパイシー フードについて</span>
+                </div>
+                <div class="about-grid">
+                    <div class="about-cell">
+                        <span class="mono">ROTI ARTISAN</span>
+                        <h3>ロティ職人が、いる。</h3>
+                        <p>スリランカの食卓に欠かせないロティを、職人が一枚ずつ手で焼き上げます。もちっと香ばしい生地はカレーとの相性抜群。</p>
+                    </div>
+                    <div class="about-cell">
+                        <span class="mono">HALAL / MUSLIM OWNED</span>
+                        <h3>ムスリムオーナーの店</h3>
+                        <p>スリランカ出身のムスリムオーナーが営む、安心のキッチン。現地そのままのレシピとスパイス使いで調理しています。</p>
+                    </div>
+                    <div class="about-cell">
+                        <span class="mono">SINCE 2025.01</span>
+                        <h3>美浦村に、新登場</h3>
+                        <p>2025年1月オープン。県道68号（美浦栄線）沿いの小さなプレハブ2棟。奥がレストランです。</p>
+                    </div>
+                </div>
+                <p class="about-note">
+                キーリサンバ米（スリランカの短粒米）を使ったライス＆カレー、ビリヤニ、もちもちのコットゥまで。
+                在日スリランカ人も通う、本場の味です。
+                </p>
+            </div>
+        </section>
+        
+        <!-- NEWS -->
+        <section id="news" style="padding: 60px 0; background: var(--bg2); border-bottom: 1px solid var(--line);">
+            <div class="container">
+                <div class="sec-head" style="margin-bottom: 24px;">
+                    <span class="sec-num mono">NEWS</span>
+                    <h2>お知らせ</h2>
+                </div>
+                
+                <!-- ここにJavaScriptでお知らせが挿入されます -->
+                    <div id="news-list" style="font-size: 0.9rem; color: var(--sand); max-height: 240px; overflow-y: auto; padding-right: 12px;">
+                      <p style="color: var(--dim);">読み込み中...</p>
+                    </div>
+            </div>
+        </section>
+        
+        <!-- MENU -->
+        <section id="menu">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-num mono">02</span>
+                    <h2>Menu</h2>
+                    <span class="jp">メニュー</span>
+                </div>
+                
+                <!-- メニュー画像ギャラリー -->
+                <div class="menu-gallery">
+                    <figure><img src="images/1.png" alt="軽食メニュー" loading="lazy"></figure>
+                    <figure><img src="images/2.png" alt="夕方スペシャル" loading="lazy"></figure>
+                    <figure><img src="images/3.png" alt="チャーハン" loading="lazy"></figure>
+                    <figure><img src="images/4.png" alt="パロタ" loading="lazy"></figure>
+                    <figure><img src="images/5.png" alt="コットゥ" loading="lazy"></figure>
+                    <figure><img src="images/9.png" alt="チーズコットゥ" loading="lazy"></figure>
+                    <figure><img src="images/7.png" alt="ドルフィンコットゥ" loading="lazy"></figure>
+                    <figure><img src="images/6.png" alt="ライス＆カレー・ビリヤニ" loading="lazy"></figure>
+                    <figure><img src="images/8.png" alt="本日のスペシャル" loading="lazy"></figure>
+                </div>
+                
+                <div class="menu-cols">
+                    <!-- 1. 軽食 -->
+                    <div class="menu-group">
+                        <h3>Food Menu<span>軽食</span></h3>
+                        <div class="m-item"><span class="name">ドゥ・ワダ</span><span class="desc">Ulundu Vadai</span><span class="dots"></span><span class="price">¥150</span></div>
+                        <div class="m-item"><span class="name">パルップ・ワダ</span><span class="desc">Paruppu Vadai</span><span class="dots"></span><span class="price">¥50</span></div>
+                        <div class="m-item"><span class="name">ポル・ロティ</span><span class="desc">Coconut Roti</span><span class="dots"></span><span class="price">¥150</span></div>
+                        <div class="m-item"><span class="name">エッグロール</span><span class="desc">Egg Roll</span><span class="dots"></span><span class="price">¥150</span></div>
+                        <div class="m-item"><span class="name">ベジタブルロティ</span><span class="desc">Vegetable Roti</span><span class="dots"></span><span class="price">¥200</span></div>
+                        <div class="m-item"><span class="name">カツレツ</span><span class="desc">katlat</span><span class="dots"></span><span class="price">¥150</span></div>
+                    </div>
+                    
+                    <!-- 2. 夕方スペシャル -->
+                    <div class="menu-group">
+                        <h3>Evening Special<span>夕方スペシャル</span></h3>
+                        <p style="font-size: 0.75rem; color: var(--dim); margin-bottom: 12px; line-height: 1.6;">米粉とココナッツミルクの生地を、お椀型の専用鍋で焼き上げたクレープのような料理。縁はパリッと、底はもっちりとした食感とほんのり甘い香りが特徴です。</p>
+                        <div class="m-item"><span class="name">アッパム</span><span class="desc">Plain appam</span><span class="dots"></span><span class="price">¥150</span></div>
+                        <div class="m-item"><span class="name">卵アッパム</span><span class="desc">Egg appam</span><span class="dots"></span><span class="price">¥250</span></div>
+                    </div>
+                    
+                    <!-- 3. チャーハン -->
+                    <div class="menu-group">
+                        <h3>Fried Rice<span>チャーハン（half / Full）</span></h3>
+                        <div class="m-item"><span class="name">チキン</span><span class="desc">Chicken</span><span class="dots"></span><span class="price">¥1,200 / ¥1,350</span></div>
+                        <div class="m-item"><span class="name">卵</span><span class="desc">Egg</span><span class="dots"></span><span class="price">¥1,000 / ¥1,200</span></div>
+                        <div class="m-item"><span class="name">牛肉</span><span class="desc">Beef</span><span class="dots"></span><span class="price">¥1,350 / ¥1,450</span></div>
+                        <div class="m-item"><span class="name">ミックス</span><span class="desc">Mix</span><span class="dots"></span><span class="price">¥1,600 / ¥1,700</span></div>
+                        <div class="m-item"><span class="name">羊肉</span><span class="desc">Mutton</span><span class="dots"></span><span class="price">¥1,350 / ¥1,450</span></div>
+                    </div>
+                    
+                    <!-- 4. パロタ -->
+                    <div class="menu-group">
+                        <h3>Parotta<span>パロタ</span></h3>
+                        <p style="font-size: 0.75rem; color: var(--dim); margin-bottom: 12px; line-height: 1.6;">小麦粉の生地を何層にも折り重ねて焼いた、デニッシュのようなもっちり薄焼きパン。スリランカのカレーと相性抜群です。</p>
+                        <div class="m-item"><span class="name">卵パロタ</span><span class="desc">Egg Parotta</span><span class="dots"></span><span class="price">¥250</span></div>
+                        <div class="m-item"><span class="name">パロタ</span><span class="desc">Parotta</span><span class="dots"></span><span class="price">¥150</span></div>
+                        <div class="m-item"><span class="name">グレービー</span><span class="desc">gravy</span><span class="dots"></span><span class="price">¥50</span></div>
+                    </div>
+                    
+                    <!-- 5. コットゥ -->
+                    <!-- 5. コットゥ -->
+                    <div class="menu-group">
+                        <h3>Kottu<span>コットゥ（half / Full）</span></h3>
+                        <p style="font-size: 0.75rem; color: var(--dim); margin-bottom: 12px; line-height: 1.6;">パロタを細かく刻み、肉や野菜、スパイスと鉄板でカンカン炒め合わせたソウルフード。スリランカの鉄板B級グルメ。スパイシーな「そばめし」のような味わいです。</p>
+                        <div class="m-item"><span class="name">チキン</span><span class="desc">Chicken</span><span class="dots"></span><span class="price">¥1,200 / ¥1,350</span></div>
+                        
+                        
+                        <div class="m-item"><span class="name">卵</span><span class="desc">Egg</span><span class="dots"></span><span class="price">¥1,000 / ¥1,200</span></div>
+                        <div class="m-item"><span class="name">牛肉</span><span class="desc">Beef</span><span class="dots"></span><span class="price">¥1,350 / ¥1,450</span></div>
+                        <div class="m-item"><span class="name">ミックス</span><span class="desc">Mix</span><span class="dots"></span><span class="price">¥1,600 / ¥1,700</span></div>
+                        <div class="m-item"><span class="name">羊肉</span><span class="desc">Mutton</span><span class="dots"></span><span class="price">¥1,350 / ¥1,450</span></div>
+                    </div>
+                    
+                    <!-- 9. チーズコットゥ -->
+                    <div class="menu-group">
+                        <h3>Cheese Kottu<span>チーズコットゥ（half / Full）</span></h3>
+                        <p style="font-size: 0.75rem; color: var(--dim); margin-bottom: 12px; line-height: 1.6;">スパイシーなコットゥにたっぷりのとろけるチーズを絡めた、濃厚でやみつきになる一品。スパイスの辛さがマイルドに包み込まれ、食欲が進みます。</p>
+                        <div class="m-item"><span class="name">チキン</span><span class="desc">Chicken</span><span class="dots"></span><span class="price">¥1,500 / ¥1,700</span></div>
+                        <div class="m-item"><span class="name">牛肉</span><span class="desc">Beef</span><span class="dots"></span><span class="price">¥1,600 / ¥1,800</span></div>
+                        <div class="m-item"><span class="name">羊肉</span><span class="desc">Mutton</span><span class="dots"></span><span class="price">¥1,600 / ¥1,800</span></div>
+                    </div>
+                    
+                    <!-- 7. ドルフィンコットゥ -->
+                    <div class="menu-group">
+                        <h3>Dolphin Kottu<span>ドルフィンコットゥ</span></h3>
+                        <p style="font-size: 0.75rem; color: var(--dim); margin-bottom: 12px; line-height: 1.6;">パロタを大きめにちぎって炒めた食べ応え抜群のメニュー。モチモチ食感が好きな方におすすめです。通常のコットゥよりも牛乳やココナッツミルクを使い、もっちりとしたクリーミーな味わいです。</p>
+                        <div class="m-item"><span class="name">チキン</span><span class="desc">Chicken</span><span class="dots"></span><span class="price">¥1,250</span></div>
+                        <div class="m-item"><span class="name">牛肉</span><span class="desc">Beef</span><span class="dots"></span><span class="price">¥1,350</span></div>
+                        <div class="m-item"><span class="name">羊肉</span><span class="desc">Mutton</span><span class="dots"></span><span class="price">¥1,350</span></div>
+                    </div>
+                    
+                    <!-- 6. ライス＆カレー / ビリヤニ -->
+                    <div class="menu-group">
+                        <h3>Rice and Curry / Briyani<span>ライス＆カレー・ビリヤニ</span></h3>
+                        <div class="m-item"><span class="name">ライス＆カレー チキン</span><span class="desc">Chicken</span><span class="dots"></span><span class="price">¥1,200</span></div>
+                        <div class="m-item"><span class="name">ライス＆カレー 牛肉</span><span class="desc">Beef</span><span class="dots"></span><span class="price">¥1,300</span></div>
+                        <div class="m-item"><span class="name">ライス＆カレー 羊肉</span><span class="desc">Mutton</span><span class="dots"></span><span class="price">¥1,300</span></div>
+                        <div class="m-item"><span class="name">ビリヤニ</span><span class="desc">Briyani</span><span class="dots"></span><span class="price">¥1,250</span></div>
+                    </div>
+                    
+                    <!-- 8. 本日のスペシャル -->
+                    <div class="menu-group">
+                        <h3>Today Special<span>本日のスペシャル</span></h3>
+                        <div class="m-item"><span class="name">ドーサ</span><span class="desc">Dosa</span><span class="dots"></span><span class="price">¥400</span></div>
+                    </div>
+                </div>
+                
+                <!-- 看板メニュー帯 -->
+                <div class="feature">
+                    <div class="big">Rice &amp;<br>Curry</div>
+                    <div>
+                        <p>
+                        キーリサンバ米のまわりに、チキンカレー、レンズ豆のココナッツカレー、青菜サンボル、
+                        インゲンとニンジンのカレー炒め、パパダム、ゆで卵——。
+                        全部を混ぜて食べるのがスリランカ流。一皿で島の味が全部わかる、当店の看板です。
+                        </p>
+                        <p class="price-tag mono">¥1,200〜 ／ 種類・提供状況はお電話でご確認ください</p>
+                    </div>
+                </div>
+                
+                <p class="menu-foot">
+                ※ 掲載メニューは一例です。価格・内容は予告なく変更となる場合がございます。<br>
+                テイクアウトも承ります。各種ご予約はお電話にてお問い合わせください。
+                </p>
+            </div>
+        </section>
+        
+        <!-- GROCERY -->
+        <section id="shop">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-num mono">03</span>
+                    <h2>Grocery</h2>
+                    <span class="jp">スリランカ食材ショップ</span>
+                </div>
+                <div class="shop-flex">
+                    <div class="shop-cell">
+                        <h3>レストランは、スリランカの台所。</h3>
+                        <p>
+                        レストラン内には、スリランカ食材が豊富に。
+                        現地のスパイスや食材が手に入る、この地域では貴重なお店です。
+                        カレーを食べた帰りに、家でつくる分のスパイスもどうぞ。
+                        </p>
+                    </div>
+                    <div class="shop-cell">
+                        <h3>取扱い例</h3>
+                        <ul>
+                            <li>スリランカ産スパイス・カレーパウダー</li>
+                            <li>キーリサンバ米などの現地米</li>
+                            <li>ココナッツ製品・紅茶（セイロンティー）</li>
+                            <li>現地の缶詰・調味料・スナック</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- INFO -->
+        <section id="info">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-num mono">04</span>
+                    <h2>Access</h2>
+                    <span class="jp">店舗情報・アクセス</span>
+                </div>
+                <div class="info-grid">
+                    <table class="info">
+                        <tr><th>SHOP</th><td>Ceylon spicy food — Haira kitchen<br><small>セイロン スパイシー フード</small></td></tr>
+                        <tr><th>ADDRESS</th><td>〒300-0424<br>茨城県稲敷郡美浦村木原1884<br><small>県道68号（美浦栄線）沿い・丸太建設向かい</small></td></tr>
+                        <tr><th>TEL</th><td><a href="tel:07039821085">070-3982-1085</a></td></tr>
+                        <tr><th>OPEN</th><td>9:30 – 21:30</td></tr>
+                        <tr><th>CLOSED</th><td>月曜日</td></tr>
+                        <tr><th>SEATS</th><td>10席（テーブル8・カウンター2）<br><small>テイクアウト・イートイン可</small></td></tr>
+                        <tr><th>PARKING</th><td>あり（5台）</td></tr>
+                    </table>
+                    <div class="map-box">
+                        <iframe src="https://www.google.com/maps?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%E7%A8%B2%E6%95%B7%E9%83%A1%E7%BE%8E%E6%B5%A6%E6%9D%91%E6%9C%A8%E5%8E%9F1884&output=embed" loading="lazy" title="Ceylon spicy food 地図"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="disp">Ceylon Spicy Food</div>
+            <a class="foot-tel" href="tel:07039821085">070-3982-1085</a>
+            <p class="mono">© 2026 CEYLON SPICY FOOD — MIHO VILLAGE, IBARAKI</p>
+        </footer>
+        
+        <script>
+            // ※アカウント作成後、ご自身のIDとAPIキーに書き換えてください
+            const YOUR_SERVICE_ID = 'ceylon-spicy-food';
+            const YOUR_API_KEY = 'pvqCV7aE9p9sRYiUlSubide1KUw4VFSXj9Zu';
+            
+            fetch(`https://${YOUR_SERVICE_ID}.microcms.io/api/v1/news?limit=10`, {
+                headers: { 'X-MICROCMS-API-KEY': YOUR_API_KEY }
+            })
+            .then(res => res.json())
+            .then(data => {
+                const newsList = document.getElementById('news-list');
+                
+                if (data.contents.length === 0) {
+                    newsList.innerHTML = '<p style="color: var(--dim);">現在お知らせはありません。</p>';
+                    return;
+                }
+                
+                // 取得したJSONデータをHTMLに展開
+                const html = data.contents.map(item => {
+                    // 日付を YYYY/MM/DD 形式に変換
+                    const date = new Date(item.publishedAt).toLocaleDateString('ja-JP');
+                    return `
+        <div style="padding: 12px 0; border-bottom: 1px dashed rgba(164,147,124,.25);">
+          <span class="mono" style="color: var(--orange); font-size: 0.8rem; margin-right: 12px;">${date}</span>
+          <span>${item.text}</span>
+        </div>
+      `;
+                }).join('');
+                
+                newsList.innerHTML = html;
+            })
+            .catch(err => {
+                console.error('Error:', err);
+                document.getElementById('news-list').innerHTML = '<p style="color: var(--dim);">お知らせの取得に失敗しました。</p>';
+            });
+        </script>
+        
+    </body>
+</html>
